@@ -16,12 +16,7 @@ from discord_slash import cog_ext, SlashContext
 from discord_slash.utils.manage_commands import create_option
 
 from helpers import json_manager
-
-if not os.path.isfile("config.json"):
-    sys.exit("'config.json' not found! Please add it and try again.")
-else:
-    with open("config.json") as file:
-        config = json.load(file)
+from config import *
 
 
 class owner(commands.Cog, name="owner"):
@@ -43,7 +38,7 @@ class owner(commands.Cog, name="owner"):
         if context.author.id in blacklist["ids"]:
             return
 
-        if context.author.id in config["owners"]:
+        if context.author.id in owners:
             embed = discord.Embed(
                 description="Shutting down. Bye! :wave:",
                 color=0x42F56C
@@ -81,7 +76,7 @@ class owner(commands.Cog, name="owner"):
         if context.author.id in blacklist["ids"]:
             return
 
-        if context.author.id in config["owners"]:
+        if context.author.id in owners:
             await context.send(message)
         else:
             embed = discord.Embed(
@@ -114,7 +109,7 @@ class owner(commands.Cog, name="owner"):
         if context.author.id in blacklist["ids"]:
             return
 
-        if context.author.id in config["owners"]:
+        if context.author.id in owners:
             embed = discord.Embed(
                 description=message,
                 color=0x42F56C
@@ -177,7 +172,7 @@ class owner(commands.Cog, name="owner"):
         if context.author.id in blacklist["ids"]:
             return
 
-        if context.author.id in config["owners"]:
+        if context.author.id in owners:
             userID = user.id
             try:
                 with open("blacklist.json") as file:
@@ -241,7 +236,7 @@ class owner(commands.Cog, name="owner"):
         if context.author.id in blacklist["ids"]:
             return
 
-        if context.author.id in config["owners"]:
+        if context.author.id in owners:
             userID = user.id
             try:
                 json_manager.remove_user_from_blacklist(userID)
