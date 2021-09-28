@@ -13,13 +13,7 @@ import sys
 from discord.ext import commands
 from discord_slash import cog_ext, SlashContext
 
-# Only if you want to use variables that are in the config.json file.
-if not os.path.isfile("config.json"):
-    sys.exit("'config.json' not found! Please add it and try again.")
-else:
-    with open("config.json") as file:
-        config = json.load(file)
-
+from config import *
 
 # Here we name the cog and create a new class for the cog.
 class Template(commands.Cog, name="template"):
