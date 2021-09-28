@@ -16,12 +16,7 @@ import discord
 from discord.ext import tasks
 from discord.ext.commands import Bot
 from discord_slash import SlashCommand, SlashContext
-
-if not os.path.isfile("config.json"):
-    sys.exit("'config.json' not found! Please add it and try again.")
-else:
-    with open("config.json") as file:
-        config = json.load(file)
+from config import *
 
 """	
 Setup bot intents (events restrictions)
@@ -55,7 +50,7 @@ intents.members = True
 
 intents = discord.Intents.default()
 
-bot = Bot(command_prefix=config["bot_prefix"], intents=intents)
+bot = Bot(command_prefix=bot_prefix, intents=intents)
 slash = SlashCommand(bot, sync_commands=True)
 
 
@@ -73,7 +68,7 @@ async def on_ready():
 # Setup the game status task of the bot
 @tasks.loop(minutes=1.0)
 async def status_task():
-    statuses = ["with you!", "with Tilak!", f"{config['bot_prefix']}help", "with humans!"]
+    statuses = ["with you!", "with Tilak!", f"{bot_prefix}help", "with humans!"]
     await bot.change_presence(activity=discord.Game(random.choice(statuses)))
 
 
@@ -118,4 +113,4 @@ async def on_command_error(context, error):
 
 
 # Run the bot with the token
-bot.run(config["token"])
+bot.run(token)
