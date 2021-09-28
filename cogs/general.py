@@ -17,13 +17,7 @@ import discord
 from discord.ext import commands
 from discord_slash import cog_ext, SlashContext
 from discord_slash.utils.manage_commands import create_option
-
-if not os.path.isfile("config.json"):
-    sys.exit("'config.json' not found! Please add it and try again.")
-else:
-    with open("config.json") as file:
-        config = json.load(file)
-
+from config import *
 
 class general(commands.Cog, name="general"):
     def __init__(self, bot):
@@ -63,7 +57,7 @@ class general(commands.Cog, name="general"):
         )
         embed.add_field(
             name="Prefix:",
-            value=f"{config['bot_prefix']}",
+            value=f"{bot_prefix}",
             inline=False
         )
         embed.set_footer(
