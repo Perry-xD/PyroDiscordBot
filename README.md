@@ -27,6 +27,10 @@ If you plan to use this template to make your own template or bot, you **have to
 See [the license file](https://github.com/kkrypt0nn/Python-Discord-Bot-Template/blob/master/LICENSE.md) for more
 information, I reserve the right to take down any repository that does not meet these requirements.
 
+## Deployment
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2FPerry-xD%2FPyroDiscordBot&envs=TOKEN%2CPREFIX%2COWNER%2CAPPLICATION_ID&TOKENDesc=Your+Discord+Bot+Token&PREFIXDesc=Your+Bot+Command+Handler&OWNERDesc=Your+Discord+Id&APPLICATION_IDDesc=Enter+your+Application+Id&referralCode=UF7LDt)
+
+
 ## Support
 
 Before requesting support, you should know that this template requires you to have at least a **basic knowledge** of
