@@ -47,7 +47,7 @@ class general(commands.Cog, name="general"):
         )
         embed.add_field(
             name="Owner:",
-            value="Krypton#2188",
+            value="beluga jr#6839",
             inline=True
         )
         embed.add_field(
