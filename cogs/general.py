@@ -159,7 +159,7 @@ class general(commands.Cog, name="general"):
             return
 
         embed = discord.Embed(
-            description=f"Invite me by clicking [here](https://discordapp.com/oauth2/authorize?&client_id={config['application_id']}&scope=bot&permissions=470150263).",
+            description=f"Invite me by clicking [here](https://discordapp.com/oauth2/authorize?&client_id=application_id&scope=bot&permissions=8).",
             color=0xD75BF4
         )
         try:
